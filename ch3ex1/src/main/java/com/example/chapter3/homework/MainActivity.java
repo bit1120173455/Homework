@@ -5,8 +5,9 @@ import android.support.v7.app.AppCompatActivity;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.SeekBar;
-
+import android.app.Activity;
 import com.airbnb.lottie.LottieAnimationView;
+import android.animation.ValueAnimator;
 
 public class MainActivity extends AppCompatActivity {
     private LottieAnimationView animationView;
@@ -41,7 +42,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
                 // TODO 3: 这里应该调用哪个函数呢
-
+                animationView.setProgress((float)progress/100);
                 // 提示1：可以参考 https://airbnb.io/lottie/android/android.html#custom-animators
                 // 提示2：SeekBar 的文档可以把鼠标放在 OnProgressChanged 中间，并点击 F1 查看，
                 // 或者到官网查询 https://developer.android.com/reference/android/widget/SeekBar.OnSeekBarChangeListener.html#onProgressChanged(android.widget.SeekBar,%20int,%20boolean)
